@@ -27,7 +27,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Servir les fichiers statiques
-app.use(express.static(path.join(__dirname, "../", "FRONT")));
+app.use(express.static(path.join(__dirname, "FRONT")));
 
 // Route pour envoyer l'e-mail
 app.post("/envoyer-email", async (req, res) => {
@@ -59,7 +59,7 @@ app.post("/envoyer-email", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../", "FRONT", "index.html"));
+  res.sendFile(path.join(__dirname, "FRONT", "index.html"));
 });
 
 const PORT = process.env.PORT;

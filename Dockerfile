@@ -20,7 +20,7 @@ FROM node:18 AS frontend
 WORKDIR /app
 
 # Copier les fichiers frontend (index.html, assets) depuis le dossier FRONT
-COPY FRONT/ ./FRONT/
+COPY FRONT /app/FRONT
 
 # Étape 3 : Créer l'image finale pour le backend + frontend
 FROM node:18
